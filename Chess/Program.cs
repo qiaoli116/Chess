@@ -16,11 +16,11 @@ namespace Chess
         static void Main(string[] args)
         {
             init();
-
+            Console.WriteLine("Type \"help\" to see all supported commands." );
             bool exit = false;
             while (!exit)
             {
-                Console.Write("$");
+                Console.Write("$ ");
                 string input = Console.ReadLine();
 
                 string cmdPattern = "^([a-zA-Z]+)";
@@ -31,6 +31,20 @@ namespace Chess
                     Console.WriteLine(cmd);
                     switch (cmd)
                     {
+                        case "help":
+                            Console.WriteLine("place command");
+                            Console.WriteLine("    structure: place type name color row column");
+                            Console.WriteLine("    example:   place knight w_knig_1 white 1 2");
+                            Console.WriteLine("move command");
+                            Console.WriteLine("    structure: move current_row current_column target_row target column");
+                            Console.WriteLine("    example:   move 1 2 2 5");
+                            Console.WriteLine("show command");
+                            Console.WriteLine("    structure: show");
+                            Console.WriteLine("exit command");
+                            Console.WriteLine("    structure: exit");
+                            Console.WriteLine("help command");
+                            Console.WriteLine("    structure: help");
+                            break;
                         case "exit":
                             exit = true;
                             break;
